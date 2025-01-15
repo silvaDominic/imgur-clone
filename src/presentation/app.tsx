@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useSearch } from "@/presentation/hooks/use-search.hook";
 import { AlbumModel } from "@/application/models/album.model";
 
+import './app.css';
+
 export function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
 

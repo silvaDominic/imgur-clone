@@ -1,0 +1,28 @@
+#root {
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+#search-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+input {
+    outline: none;
+    box-shadow: none;
+    padding: 10px;
+    border-radius: 3px;
+    max-width: 300px;
+    width: 100%;
+    background-color: #454469;
+}
