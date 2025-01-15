@@ -1,7 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearch } from "@/presentation/hooks/use-search.hook";
+import { AlbumModel } from "@/application/models/album.model";
 
 export function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const {
+    data,
+    isLoading,
+    error,
+    searchByAlbum
+  } = useSearch();
+
+  useEffect(() => {
+    let timeout = 0;
+    if (searchTerm) {
+      timeout = setTimeout(() => searchByAlbum(searchTerm), 500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [searchTerm]);
 
   return (
     <div className="app">
@@ -13,12 +31,20 @@ export function App() {
 
           <div>
             {searchTerm}
+            
+            <ul>
+              {
+                data.map((album: AlbumModel) => (
+                  <li key={album.id}>
+                    <img src={`https://i.imgur.com/${album.coverImageId}.jpeg`} alt={album.title}/>
+                  </li>
+                ))
+              }
+            </ul>
             {/* LOADING TEMPLATE */}
             {/* GRID */}
           </div>
         </div>
-
-
       </main>
     </div>
   );
