@@ -22,14 +22,8 @@ export default defineConfig(({ mode }) => {
       'process.env': env, // Load environment variables from the root .env file
     },
     server: {
-      proxy: {
-        '/api': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-          secure: false,
-          rewrite: (path) => path.replace(/^\/api/, ''),
-        },
-      },
+      host: '127.0.0.1',  // Set to 127.0.0.1 instead of 'localhost' (fixes request issue with Imgur API)
+      port: 5173,
     },
   };
 });
