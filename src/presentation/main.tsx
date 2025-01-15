@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 
 import './normalize.css';
 import './index.css';
-import { App } from "@/presentation/App";
+import { App } from "@/presentation/app";
 
 const container = document.getElementById('root');
 
