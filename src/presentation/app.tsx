@@ -32,18 +32,19 @@ export function App() {
           <input placeholder='Search albums' type="text" onChange={(e) => setSearchTerm(e.target.value)}/>
 
           <div>
-            {searchTerm}
-            
-            <ul>
-              {
-                data.map((album: AlbumModel) => (
-                  <li key={album.id}>
-                    <img src={`https://i.imgur.com/${album.coverImageId}.jpeg`} alt={album.title}/>
-                  </li>
-                ))
-              }
-            </ul>
-            {/* LOADING TEMPLATE */}
+            {
+              isLoading
+                ? <div className='loader'><span></span></div>
+                :  <ul>
+                  {
+                    data.map((album: AlbumModel) => (
+                      <li key={album.id}>
+                        <img src={`https://i.imgur.com/${album.coverImageId}.jpeg`} alt={album.title}/>
+                      </li>
+                    ))
+                  }
+                </ul>
+            }
             {/* GRID */}
           </div>
         </div>
