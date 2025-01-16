@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { App } from "@/presentation/app";
-import { AlbumPage } from "@/presentation/pages/album.page";
+import { AlbumPage } from "@/presentation/pages/album/album.page";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 import './normalize.css';
