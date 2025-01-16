@@ -43,7 +43,7 @@ export function App() {
                     <GridItem key={album.id}>
                       <Album
                         id={album.id}
-                        imgSrc={album.coverImageId}
+                        imgSrc={`https://i.imgur.com/${album.coverImageId}.jpeg`}
                         imgAltText={album.title}
                         images={album.images}
                       />
