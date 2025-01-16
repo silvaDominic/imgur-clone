@@ -25,7 +25,7 @@ export function GalleryPage() {
                 image.isVideo
                   ? <video
                     width="100%"
-                    autoplay
+                    autoPlay
                     loop
                     muted>
                       <source
