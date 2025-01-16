@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AlbumModel } from "@/application/models/album.model";
-import { ImgurService } from "@/application/services/imgur.service";
+import { ImgurApiService } from "@/application/services/imgur-api.service";
 import { dtoToAlbumModel } from "@/application/mappers/imgur-api.mapper";
 
 type useSearchReturnModel = {
@@ -18,7 +18,7 @@ export function useSearch() {
   async function searchByAlbum(searchTerm: string): Promise<void> {
     setIsLoading(true);
     try {
-      const { data } = await ImgurService.searchByAlbum(searchTerm);
+      const { data } = await ImgurApiService.searchByAlbum(searchTerm);
       console.log(data);
       setData(data.map((searchDTO: any) => dtoToAlbumModel(searchDTO)));
     } catch(err: any) {
