@@ -3,6 +3,8 @@ import { useSearch } from "@/presentation/hooks/use-search.hook";
 import { AlbumModel } from "@/application/models/album.model";
 
 import './app.css';
+import { GridItem } from "@/presentation/components/grid/grid-item";
+import { Grid } from "@/presentation/components/grid/grid";
 
 export function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -35,17 +37,16 @@ export function App() {
             {
               isLoading
                 ? <div className='loader'><span></span></div>
-                :  <ul>
-                  {
-                    data.map((album: AlbumModel) => (
-                      <li key={album.id}>
-                        <img src={`https://i.imgur.com/${album.coverImageId}.jpeg`} alt={album.title}/>
-                      </li>
-                    ))
-                  }
-                </ul>
+                : <Grid>
+                  {data.map((album: AlbumModel) => (
+                    <GridItem
+                      key={album.id}
+                      imgSrc={`https://i.imgur.com/${album.coverImageId}.jpeg`}
+                      imgAltText={album.title}
+                    />
+                  ))}
+                </Grid>
             }
-            {/* GRID */}
           </div>
         </div>
       </main>
