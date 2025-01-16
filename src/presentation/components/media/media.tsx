@@ -20,7 +20,11 @@ export function Media({src, alt, isVideo = false}: ImageProps) {
             width="100%"
             autoPlay
             loop
-            muted>
+            muted
+            controls
+            style={{display: isLoading ? 'none' : 'block'}}
+            onCanPlay={() => setIsLoading(false)}
+          >
             <source
               src={src}
               type="video/mp4"
