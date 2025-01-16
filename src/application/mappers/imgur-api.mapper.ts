@@ -1,5 +1,5 @@
 import { AlbumModel } from "@/application/models/album.model";
-import { ImageModel } from "@/application/models/image.model";
+import { MediaModel } from "@/application/models/media.model";
 
 export function dtoToAlbumModel(dto: any) {
   if (!dto) {
@@ -11,7 +11,7 @@ export function dtoToAlbumModel(dto: any) {
       dto.id,
       dto.title,
       dto.cover,
-      (dto.images || []).map((imageDto: any) => dtoToImageModel(imageDto)),
+      (dto.images || []).map((imageDto: any) => dtoToMediaModel(imageDto)),
     )
   } catch (err) {
     console.error('Error mapping DTO to Album Model:', err);
@@ -19,13 +19,13 @@ export function dtoToAlbumModel(dto: any) {
   }
 }
 
-export function dtoToImageModel(dto: any) {
+export function dtoToMediaModel(dto: any) {
   if (!dto) {
     throw new Error('Invalid DTO.');
   }
 
   try {
-    return new ImageModel(
+    return new MediaModel(
       dto.id,
       dto.title,
       dto.description,
@@ -33,7 +33,7 @@ export function dtoToImageModel(dto: any) {
       !!dto.mp4,
     )
   } catch (err) {
-    console.error('Error mapping DTO to Image Model:', err);
+    console.error('Error mapping DTO to Media Model:', err);
     throw err;
   }
 }

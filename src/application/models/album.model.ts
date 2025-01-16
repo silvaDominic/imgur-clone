@@ -1,11 +1,11 @@
-import { ImageModel } from "@/application/models/image.model";
+import { MediaModel } from "@/application/models/media.model";
 
 export class AlbumModel {
   constructor(
     public id: string,
     public title: string,
     public coverImageId: string,
-    public images: ImageModel[],
+    public images: MediaModel[],
   ) {
   }
 }

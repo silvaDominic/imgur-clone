@@ -1,33 +1,27 @@
 import { Link } from "react-router";
-import { ImageModel } from "@/application/models/image.model";
+import { MediaModel } from "@/application/models/media.model";
 import { useState } from "react";
 import { LoadingWidget } from "@/presentation/components/loading-widget/loading-widget";
+import { Media } from "@/presentation/components/image/media";
 
 type AlbumProps = {
   id: string,
   imgSrc: string,
   imgAltText: string,
-  images: ImageModel[],
+  images: MediaModel[],
 }
 
 export function Album({id, imgSrc, imgAltText, images}: AlbumProps) {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
     <>
-      <LoadingWidget isLoading={isLoading}/>
-
       <Link
         to={`/album/${id}`}
         state={{images: images}}
       >
-        <img
-          crossOrigin='anonymous'
+        <Media
           src={imgSrc}
           alt={imgAltText}
-          referrerPolicy="no-referrer"
-          style={{display: isLoading ? 'none' : 'block'}}
-          onLoad={() => setIsLoading(false)}
         />
       </Link>
     </>

@@ -1,4 +1,4 @@
-export class ImageModel {
+export class MediaModel {
   constructor(
     public id: string,
     public title: string,

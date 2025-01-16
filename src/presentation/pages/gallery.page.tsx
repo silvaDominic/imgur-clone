@@ -1,9 +1,10 @@
 import { useLocation, useParams } from "react-router";
 import { useEffect } from "react";
-import { ImageModel } from "@/application/models/image.model";
+import { MediaModel } from "@/application/models/media.model";
 
 import './gallery.styles.css';
 import { Lightbox } from "@/presentation/components/lightbox/lightbox";
+import { Media } from "@/presentation/components/image/media";
 
 export function GalleryPage() {
   const { id } = useParams<{ id: string }>();
@@ -18,27 +19,14 @@ export function GalleryPage() {
   return (
     <div className='image-container'>
         {
-          images?.map((image: ImageModel) => (
+          images?.map((image: MediaModel) => (
             <div className='image' key={image.id}>
               <Lightbox>
-              {
-                image.isVideo
-                  ? <video
-                    width="100%"
-                    autoPlay
-                    loop
-                    muted>
-                      <source
-                        src={image.link}
-                        type="video/mp4"
-                        referrerPolicy="no-referrer"/>
-                    </video>
-                  : <img
-                    src={image.link}
-                    alt={image.title}
-                    referrerPolicy="no-referrer"
-                  />
-              }
+                <Media
+                  src={image.link}
+                  alt={image.title}
+                  isVideo={image.isVideo}
+                />
               </Lightbox>
             </div>
           ))
