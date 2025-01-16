@@ -5,7 +5,7 @@ import { AlbumModel } from "@/application/models/album.model";
 import './app.styles.css';
 import { GridItem } from "@/presentation/components/grid/grid-item";
 import { Grid } from "@/presentation/components/grid/grid";
-import { Album } from "@/presentation/components/album";
+import { AlbumLink } from "@/presentation/components/album-link/album-link";
 import { LoadingWidget } from "@/presentation/components/loading-widget/loading-widget";
 
 export function App() {
@@ -42,7 +42,7 @@ export function App() {
                 : <Grid>
                   {data.map((album: AlbumModel) => (
                     <GridItem key={album.id}>
-                      <Album
+                      <AlbumLink
                         id={album.id}
                         imgSrc={`https://i.imgur.com/${album.coverImageId}.jpeg`}
                         imgAltText={album.title}
