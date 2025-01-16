@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { ImageModel } from "@/application/models/image.model";
 
 import './gallery.styles.css';
+import { Lightbox } from "@/presentation/components/lightbox/lightbox";
 
 export function GalleryPage() {
   const { id } = useParams<{ id: string }>();
@@ -19,6 +20,7 @@ export function GalleryPage() {
         {
           images?.map((image: ImageModel) => (
             <div className='image' key={image.id}>
+              <Lightbox>
               {
                 image.isVideo
                   ? <video
@@ -37,6 +39,7 @@ export function GalleryPage() {
                     referrerPolicy="no-referrer"
                   />
               }
+              </Lightbox>
             </div>
           ))
         }
