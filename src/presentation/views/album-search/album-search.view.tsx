@@ -2,7 +2,7 @@ import { LoadingWidget } from "@/presentation/components/loading-widget/loading-
 import { Grid } from "@/presentation/components/grid/grid";
 import { AlbumModel } from "@/application/models/album.model";
 import { GridItem } from "@/presentation/components/grid/grid-item";
-import { AlbumLink } from "@/presentation/components/album-link/album-link";
+import { AlbumLink } from "@/presentation/features/album-link/album-link";
 import { ReactElement, useEffect, useState } from "react";
 import { useSearch } from "@/presentation/hooks/use-search.hook";
 
