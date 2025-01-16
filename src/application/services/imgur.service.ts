@@ -1,6 +1,6 @@
 import { HttpService } from "./http.service.ts";
 
-const IMGUR_BASE_ENDPOINT = 'https://api.imgur.com/3/gallery/search';
+const IMGUR_BASE_ENDPOINT = 'https://api.imgur.com/3';
 const API_ID = process.env.VITE_API_ID;
 
 export const ImgurService = {
