@@ -2,7 +2,7 @@ import { useLocation, useParams } from "react-router";
 import { useEffect } from "react";
 import { MediaModel } from "@/application/models/media.model";
 import { Lightbox } from "@/presentation/components/lightbox/lightbox";
-import { Media } from "@/presentation/components/image/media";
+import { Media } from "@/presentation/components/media/media";
 
 import './album.styles.css';
 

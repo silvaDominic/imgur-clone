@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { MediaModel } from "@/application/models/media.model";
-import { Media } from "@/presentation/components/image/media";
+import { Media } from "@/presentation/components/media/media";
 
 type AlbumProps = {
   id: string,
