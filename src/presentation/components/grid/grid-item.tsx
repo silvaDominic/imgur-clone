@@ -1,19 +1,10 @@
-import { ReactElement } from "react";
+import { PropsWithChildren, ReactElement } from "react";
 
-type GridItemProps = {
-  imgSrc: string,
-  imgAltText: string,
-}
-
-export function GridItem({imgSrc, imgAltText, title}: GridItemProps): ReactElement {
+export function GridItem(props: PropsWithChildren<{}>): ReactElement {
   return (
     <>
       <div className='grid-item'>
-        <img
-          crossOrigin='anonymous'
-          src={imgSrc}
-          alt={imgAltText}
-        />
+        { props.children }
       </div>
     </>
   );

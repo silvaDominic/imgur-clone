@@ -5,6 +5,7 @@ import { AlbumModel } from "@/application/models/album.model";
 import './app.css';
 import { GridItem } from "@/presentation/components/grid/grid-item";
 import { Grid } from "@/presentation/components/grid/grid";
+import { Album } from "@/presentation/components/album";
 
 export function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -39,11 +40,14 @@ export function App() {
                 ? <div className='loader'><span></span></div>
                 : <Grid>
                   {data.map((album: AlbumModel) => (
-                    <GridItem
-                      key={album.id}
-                      imgSrc={`https://i.imgur.com/${album.coverImageId}.jpeg`}
-                      imgAltText={album.title}
-                    />
+                    <GridItem key={album.id}>
+                      <Album
+                        id={album.id}
+                        imgSrc={album.coverImageId}
+                        imgAltText={album.title}
+                        images={album.images}
+                      />
+                    </GridItem>
                   ))}
                 </Grid>
             }

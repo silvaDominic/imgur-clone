@@ -4,3 +4,7 @@
     padding: 50px;
     gap: 50px 20px;
 }
+
+.grid-item {
+    text-align: center;
+}
