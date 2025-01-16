@@ -6,6 +6,7 @@ import './app.css';
 import { GridItem } from "@/presentation/components/grid/grid-item";
 import { Grid } from "@/presentation/components/grid/grid";
 import { Album } from "@/presentation/components/album";
+import { LoadingWidget } from "@/presentation/components/loading-widget/loading-widget";
 
 export function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -37,7 +38,7 @@ export function App() {
           <div>
             {
               isLoading
-                ? <div className='loader'><span></span></div>
+                ? <LoadingWidget isLoading={isLoading} />
                 : <Grid>
                   {data.map((album: AlbumModel) => (
                     <GridItem key={album.id}>
