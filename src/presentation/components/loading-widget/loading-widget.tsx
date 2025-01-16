@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import './loading-widget.css';
+import './loading-widget.styles.css';
 
 type LoadingWidthProps = {
   isLoading: boolean,

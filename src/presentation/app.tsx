@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearch } from "@/presentation/hooks/use-search.hook";
 import { AlbumModel } from "@/application/models/album.model";
 
-import './app.css';
+import './app.styles.css';
 import { GridItem } from "@/presentation/components/grid/grid-item";
 import { Grid } from "@/presentation/components/grid/grid";
 import { Album } from "@/presentation/components/album";

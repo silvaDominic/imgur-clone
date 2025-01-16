@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './lightbox.css';
+import './lightbox.styles.css';
 
 export function Lightbox({ children }) {
   const [isOpen, setIsOpen] = useState(false);
