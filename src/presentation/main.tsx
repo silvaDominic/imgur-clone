@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { App } from "@/presentation/app";
-import { GalleryPage } from "@/presentation/pages/gallery.page";
+import { AlbumPage } from "@/presentation/pages/album.page";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 import './normalize.css';
@@ -14,7 +14,7 @@ if (container) {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}/>
-        <Route path='/album/:id' element={<GalleryPage />} />
+        <Route path='/album/:id' element={<AlbumPage />} />
       </Routes>
     </BrowserRouter>
   );
