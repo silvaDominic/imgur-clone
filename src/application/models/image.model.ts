@@ -4,6 +4,7 @@ export class ImageModel {
     public title: string,
     public description: string,
     public link: string,
+    public isVideo: boolean,
   ) {
   }
 }

@@ -30,6 +30,7 @@ export function dtoToImageModel(dto: any) {
       dto.title,
       dto.description,
       dto.link,
+      !!dto.mp4,
     )
   } catch (err) {
     console.error('Error mapping DTO to Image Model:', err);
